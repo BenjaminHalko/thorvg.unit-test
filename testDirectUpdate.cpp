@@ -44,7 +44,6 @@ void transit_cb(Elm_Transit_Effect *effect, Elm_Transit* transit, double progres
     pShape->reset();    //reset path
 
     pShape->appendRect(-100 + (800 * progress), -100 + (800 * progress), 200, 200, (100 * progress));
-    pShape->scale(1 - 0.75 * progress);
 
     //Update shape for drawing (this may work asynchronously)
     pShape->update(canvas->engine());
