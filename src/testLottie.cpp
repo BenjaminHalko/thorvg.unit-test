@@ -294,13 +294,13 @@ TEST_CASE("Lottie Asset Resolver", "[tvgLottie]")
 
         auto resolver = [](Paint* p, const char* src, void* data) -> bool {
             if (p->type() == Type::Picture) {
-                string resolvedPath = string(TEST_DIR) + "/image/test.png";
+                string resolvedPath = string(TEST_DIR) + "/test.png";
                 auto ret = static_cast<Picture*>(p)->load(resolvedPath.c_str());
                 return (ret == Result::Success);
             } else if (p->type() == Type::Text) {
-                string fontPath = string(TEST_DIR) + "/font/Arial.ttf";
+                string fontPath = string(TEST_DIR) + "/PublicSans-Regular.ttf";
                 if (Text::load(fontPath.c_str()) != Result::Success) return false;
-                auto ret = static_cast<Text*>(p)->font("Arial");
+                auto ret = static_cast<Text*>(p)->font("PublicSans-Regular");
                 return (ret == Result::Success);
             }
             return false;
